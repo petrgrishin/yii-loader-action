@@ -12,7 +12,8 @@
       if ($container) {
         $container.remove();
       }
-      $container = $(this.getContent());
+      $container = $("<div />");
+      $container.html(this.getContent());
       return $container.appendTo('body:first');
     });
     response.bindContext(function() {

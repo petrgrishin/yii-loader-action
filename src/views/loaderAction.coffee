@@ -8,7 +8,8 @@ App.register "{{id}}", (params, scope, widgets) ->
 
   response.bindLoad ->
     $container.remove() if $container
-    $container = $(@getContent())
+    $container = $ "<div />"
+    $container.html @getContent()
     $container.appendTo 'body:first'
 
   response.bindContext ->
