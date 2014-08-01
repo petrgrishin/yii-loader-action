@@ -9,12 +9,11 @@
       return loader.pull(url || params["url"]);
     };
     response.bindLoad(function() {
-      var $content;
       if ($container) {
         $container.remove();
       }
-      $content = $(this.getContent());
-      return $content.appendTo('body:first');
+      $container = $(this.getContent());
+      return $container.appendTo('body:first');
     });
     response.bindContext(function() {
       var context;

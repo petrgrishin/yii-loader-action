@@ -8,8 +8,8 @@ App.register "{{id}}", (params, scope, widgets) ->
 
   response.bindLoad ->
     $container.remove() if $container
-    $content = $(@getContent())
-    $content.appendTo 'body:first'
+    $container = $(@getContent())
+    $container.appendTo 'body:first'
 
   response.bindContext ->
     context = @getContext()
