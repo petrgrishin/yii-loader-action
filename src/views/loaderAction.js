@@ -19,16 +19,16 @@
     response.bindContext(function() {
       var context;
       context = this.getContext();
-      if (context && context.onApply) {
-        return context.onApply(function() {
-          return response.apply();
+      if (context && context.bindApply) {
+        return context.bindApply(function() {
+          return response.triggerApply();
         });
       } else {
-        return response.apply();
+        return response.triggerApply();
       }
     });
     return {
-      onApply: function(callback) {
+      bindApply: function(callback) {
         return response.bindApply(callback);
       },
       load: function(url) {

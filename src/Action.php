@@ -11,12 +11,16 @@ class Action {
     protected $url;
     protected $confirm;
 
+    public static function className() {
+        return get_called_class();
+    }
+
     public static function create() {
         return new self();
     }
 
-    public static function className() {
-        return get_called_class();
+    public function __construct() {
+
     }
 
     /**
