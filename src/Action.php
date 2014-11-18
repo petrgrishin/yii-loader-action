@@ -41,7 +41,7 @@ class Action {
 
     public function toArray() {
         return array(
-            'url' => $this->url,
+            'url' => $this->url instanceof \PetrGrishin\Url\UrlBuilder ? $this->url->getUrl() : $this->url,
             'confirm' => $this->confirm,
         );
     }
